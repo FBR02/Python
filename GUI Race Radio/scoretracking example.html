@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xml:lang="en" lang="en">
+
+
+
+<head>
+<title>Jordan_Souza_Price - SCORE Baja 500 2021 individual history by trackleaders.com</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<link rel="stylesheet" href="//trackleaders.com/style-v5.css" type="text/css" media="screen" />
+	<meta name="description" content="Full history tracking archive for Jordan_Souza_Price, in the SCORE Baja 500 2021.  Includes statistics, speed plots and other analysis." />
+<meta name="keywords" content="Trackleaders, SCORE Baja 500 2021,Jordan_Souza_Price, SPOT tracking, spot replay, event tracking, spot share page, leaderboard" />
+        <meta name="author" content="Scott Morris" />
+<link rel='stylesheet' id='google-fonts-css'  href='//fonts.googleapis.com/css?family=PT+Sans:400,700|Oswald:400,700|Titillium+Web:400,700' type='text/css' media='all' />
+    <link href="//fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet" type="text/css">
+  <meta property="og:image" content="//trackleaders.com/images/FB-preview-v2.png">
+  <meta property="fb:app_id" content="222181257798436">
+  <meta property="fb:admins" content="{scott.morris.731}"/>
+
+
+</head>
+
+<body>
+<center>
+<div id="top">
+<center>
+
+<MAP NAME="map1">
+<AREA
+   HREF="//trackleaders.com" ALT="trackleaders" TITLE="trackleaders.com"
+   SHAPE=RECT COORDS="0,0,800,120">
+<AREA
+   HREF="//findmespot.com" ALT="SPOT" TITLE="findmespot.com"
+   SHAPE=RECT COORDS="800,0,1024,120" target=_blank>
+</MAP>
+
+<a href="//trackleaders.com">
+<img border="0" src="/images/header-v5.png" alt="trackleaders" / USEMAP="#map1">
+</a>
+</center>
+</div>
+
+<div id="menu">
+<a target='blank' href="//trackleaders.com">Home</a>
+&nbsp;&nbsp;
+<a target='blank' href="//trackleaders.com/features">Features</a>
+&nbsp;&nbsp;
+
+<a target='blank' href="//trackleaders.com/history">Portfolio</a>
+&nbsp;&nbsp;
+
+<a target='blank' href="//trackleaders.com/trailtracking">Trail Tracking</a>
+&nbsp;&nbsp;
+
+<a target='blank' href="//trackleaders.com/about">About / Contact</a>
+&nbsp;&nbsp;
+
+<a target='blank' href="//trackleaders.com/support"><img style="vertical-align:middle" vspace=0 width=106 border=0 src="/images/donate.png"></a>
+
+</div>
+
+<div id="content">
+
+
+
+
+<head>
+
+    <!--[if IE]><script language="javascript" type="text/javascript" src="http://topofusion.com/spot/excanvas.pack.js"></script><![endif]-->
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script language="javascript" type="text/javascript" src="scripts/flot-0.8.3/flot/jquery.flot.min.js"></script>
+    <script language="javascript" type="text/javascript" src="scripts/flot-0.8.3/flot/jquery.flot.navigate.min.js"></script>
+
+    <link href="//fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+   integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+   crossorigin=""/>
+
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+   integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+   crossorigin=""></script>
+
+    <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
+
+
+<style type="text/css" title="currentStyle">
+    @import "scripts/jquery-ui-1.9.2.custom/css/flat-v1/jquery-ui-1.9.2.custom.css";
+
+    @import "override-jqueryui-v4.css";
+</style>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/s/ju/dt-1.10.10,fc-3.2.0,fh-3.1.0/datatables.min.css"/>
+
+<script type="text/javascript" src="https://cdn.datatables.net/s/ju/dt-1.10.10,fc-3.2.0,fh-3.1.0/datatables.min.js"></script>
+
+<script src="//code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script src="scripts/gmap-style-v0.js"></script>
+
+
+<script type="text/javascript">
+
+  var ctooltips = [];
+  var mtooltips = [];
+
+      function removemtooltips() {
+	  for (var i=0; i<ctooltips.length; i++)
+	      ctooltips[i].removeTip();
+	  for (var i=0; i<mtooltips.length; i++)
+	      mtooltips[i].removeTip();
+      }
+
+
+var fastLayers = [];
+
+function fastlayerclick(box,filename) {
+        if (box.checked) {
+	    var found = false;
+            for (i=0;i<fastLayers.length;i++) {
+		if (fastLayers[i].myfilename == filename) {
+		    fastLayers[i].show();
+		    found = true;
+		}
+	    }
+	    if (!found) {
+		newLayer = new FastLayer('spot/baja500-21/'+filename,map);
+		newLayer.myfilename = filename;
+		fastLayers.push(newLayer);
+		//newLayer.show();
+	    }
+        } else {
+
+
+            for (i=0;i<fastLayers.length;i++) {
+		if (fastLayers[i].myfilename == filename) {
+
+		    fastLayers[i].hide();
+		}
+	    }
+        }
+}
+
+    /*** == code for turning on/off layers from sidebar ==  ***/
+
+    var kmlLayers = [];
+
+    function layerclick(box,filename) {
+        if (box.checked) {
+	    var found = false;
+            for (i=0;i<kmlLayers.length;i++) {
+		if (kmlLayers[i].myfilename == filename) {
+		    kmlLayers[i].setMap(map);
+		    found = true;
+		}
+	    }
+	    if (!found) {
+		if (filename.indexOf("radar") != -1)  // radar shouldn't be clickable
+		    shouldclick = false;
+		else
+		    shouldclick = true;
+
+		var kmlOptions = {
+		    clickable: true,
+		    map: map,
+		    preserveViewport: true,
+		    suppressInfoWindows: false
+		};
+
+		newLayer = new google.maps.KmlLayer('http://trackleaders.com/spot/baja500-21/'+filename,kmlOptions);
+		newLayer.myfilename = filename;
+		kmlLayers.push(newLayer);
+	    }
+        } else {
+            for (i=0;i<kmlLayers.length;i++) {
+		if (kmlLayers[i].myfilename == filename) {
+		    kmlLayers[i].setMap(null);
+		}
+	    }
+        }
+    }
+
+
+$(function()
+{
+
+ $( "#refreshMapButton" ).button({icons: { primary: "ui-icon-arrowrefresh-1-e" }});
+
+ $('#refreshMapButton').click(function(){
+
+   jQuery.post('spot/baja500-21/Jordan_Souza_Price.js', function(data) {
+      // first remove all existing main markers
+      for (var i=0; i<imarkers.length; i++) {
+        imarkers[i].remove();
+      }
+      imarkers = [];
+      polyline.remove();
+      addHistoryPoints();
+      loadStatusTable();
+   });
+ });
+
+
+});
+
+</script>
+
+
+<!--  begin leaflet maps Javascript code -->
+
+
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
+
+
+<!-- the $mytopo_partnerID and $mytopo_hash are both available because
+   we imported the helper script above. -->
+
+
+
+<script type="text/javascript">
+
+  var map;
+  var gx;
+  var iconSPOT;
+  var imarkers = [];
+  var polypath = [];
+  var infowindow;
+  var cpinfowindow;
+
+
+  function initialize() {
+
+
+var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+	  '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+	  'Imagery  <a href="https://www.thunderforest.com/">Thunderforest</a>',
+      mbUrl = 'https://a.tile.thunderforest.com/{id}/{z}/{x}/{y}.png?apikey=e8ac6369552346eb913375cf2f325683';
+
+      var landscape   = L.tileLayer(mbUrl, {id: 'landscape', attribution: mbAttr}),
+      cycle  = L.tileLayer(mbUrl, {id: 'cycle',   attribution: mbAttr}),
+      outdoor  = L.tileLayer(mbUrl, {id: 'outdoors',   attribution: mbAttr});
+
+      var terrain = L.tileLayer("http://tile.stamen.com/terrain/{z}/{x}/{y}.png", {id: 'terrain', attribution: 'Map tiles by <a href=http://stamen.com/>Stamen Design</a>, under CC BY 3.0. Data by <a href=http://openstreetmap.org/>OpenStreetMap</a>, under ODbL'});
+
+      var mytopo = L.tileLayer("http://tileserver.trimbleoutdoors.com/SecureTile/TileHandler.ashx?mapType=Topo&partnerID=12228&hash=63a1a415a447e8bd0a98c3436578a831&x={x}&y={y}&z={z}", {id: 'mytopo', attribution: 'Topo maps provided by &copy <a href=http://www.mytopo.com/index.cfm?pid=topofusion>MyTopo.com</a>'});
+
+       ustopo = L.tileLayer("https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/{z}/{y}/{x}", {id: 'ustopo', attribution: '&copy USGS'});
+
+      var usgsimagery = L.tileLayer("https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/{z}/{y}/{x}", {maxZoom: 16,id: 'usgsimagery', attribution: '&copy USGS'});
+
+      map = L.map('map_canvas', {layers: [terrain], bounceAtZoomLimits: false, zoomSnap: 0.2});
+
+      var baseLayers = {
+	  "myTopo": mytopo,
+	  "USGS Aerial": usgsimagery,
+	  "Cycle": cycle,
+	  "Landscape": landscape,
+          "USTopo": ustopo,
+	  "Outdoor": outdoor,
+	  "Terrain": terrain
+      };
+      L.control.layers(baseLayers).addTo(map);
+      L.control.scale().addTo(map);
+
+      // look for an auxiliary file to show always along with base route kml
+      // then load main file, so it's on top
+
+
+     // look for a networked file, and if it exists, show that instead of the main prefix.kml
+
+  // ajax uses caching.  post forces reload every time.
+
+      jQuery.ajax({ url: 'spot/baja500-21/route.js', success: function(data) {
+	  addRoute();
+	  gx = routeline0;
+
+      }});
+
+
+
+
+      iconPlane = new L.icon({iconUrl: 'http://3.bp.blogspot.com/-i88u6Fuirtk/Ub_rOhIjmNI/AAAAAAAAB_g/1-sGqK-nT-U/s1600/airports.png', iconSize: [11, 20]});
+      iconDog = new L.icon({iconUrl: 'icons2/questdog.png', iconSize: [22, 37], iconAnchor: [11, 37]});
+      iconTrailBreaker = new L.icon({iconUrl: 'icons2/snowmachineYQ.png', iconSize: [11, 37]});
+      iconSPOT = new L.icon({iconUrl: 'icons2/spotmsgtrack.png', iconSize: [11, 37]});
+      iconDot = new L.icon({iconUrl: 'icons2/whitedot.png', iconSize: [24,24]});
+      iconTent = new L.icon({iconUrl: 'images/iconTent.png', iconSize: [22,20]});
+      iconMsg = new L.icon({iconUrl: 'images/iconMsg.png', iconSize: [24,24]});
+      iconRedDot = new L.icon({iconUrl: 'icons2/buoy.png', iconSize: [24,24]});
+      iconGreenBuoy = new L.icon({iconUrl: 'icons2/greenbuoy.png', iconSize: [24,24]});
+      iconYellowSpeed = new L.icon({iconUrl: 'icons2/yellowbuoy.png', iconSize: [24,24]});
+      iconNewMovement = new L.icon({iconUrl: 'icons2/go-lv.png', iconSize: [18,18]});
+      iconStop = new L.icon({iconUrl: 'icons2/pause-lv.png', iconSize: [18,18]});
+      iconPower = new L.icon({iconUrl: 'icons2/power.png', iconSize: [18,18]});
+      iconDotGray = new L.icon({iconUrl: 'icons2/bluebuoy.png', iconSize: [24,24]});
+      // get the function that adds the main points to the map, then execute it
+
+      genIcons2 = L.Icon.extend({
+	  options: {
+	      iconSize: [44, 30],
+	      iconAnchor: [1, 30],
+	      popupAnchor: [26, -31]
+	      }
+      });
+      genIcons1 = L.Icon.extend({
+	  options: {
+	      iconSize: [44, 38],
+	      iconAnchor: [1, 38],
+	      popupAnchor: [26, -40]
+	      }
+      });
+      genIcons0 = L.Icon.extend({
+	  options: {
+	      iconSize: [21, 34],
+	      iconAnchor: [10, 34],
+	      popupAnchor: [10, -36]
+	      }
+      });
+
+
+      jQuery.post('spot/baja500-21/Jordan_Souza_Price.js', function(data) {
+	  addHistoryPoints();
+
+
+      });
+
+      // always show vcp and speedzone layers if this is a log file
+
+
+ jQuery.post('spot/baja500-21/checkgen.js', function(data) {
+	  addCPPoints();
+         });
+
+
+
+      map.setZoom(11);
+
+  }
+
+</script>
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+
+  // non-google maps initialization
+
+  // turn the h3 and divs from accordion.php into a jquery object
+
+  $("#accordion").show();
+
+  $( "#accordion" ).accordion({  collapsible: true, fillSpace: true });
+
+  var datatableOptions = {
+        "bSort": false,
+        "bFilter": false,
+        "bInfo": false,
+	"bJQueryUI": true,
+	"bAutoWidth": false,
+	"bPaginate": false,
+	"sScrollY": 250,
+	"sScrollX": "100%"
+	};
+
+  loadStatusTable();
+
+  });
+
+var DTstatusTable;
+
+function loadStatusTable () {
+
+          var datatableOptions2 = { destroy: true, scrollX: true, scrollY: "240px", sort: false, paging:   false, info: false, searching: false, stateSave: true, processing: false };
+
+    $('#statustable').show();
+    DTstatusTable = $('#statustable').dataTable( datatableOptions2 );
+
+
+}
+
+
+</script>
+
+
+</head>
+
+<center>
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-1002791867453166";
+/* Trackleaders leaderboard style ad */
+google_ad_slot = "6264242560";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></center>
+
+
+<br /><br />
+
+<h4><a href=baja500-21> SCORE Baja 500 2021 Tracker </a> - Jordan_Souza_Price Full History</h4>
+
+<div style="position: relative; width: 0px; height: 0px; z-index: 700; left: 100px; top: 10px" id="spotlivecontainer"><a href="http://findmespot.com"> <img src="//trackleaders.com/images/spotlive_75.png" style="border: 0;" width="75" border="0" style="margin: 15px 0 0 2px"></a></div>
+
+<body onload="initialize()">
+  <div id="map_canvas" style="width:782px; height:600px; float:left;"></div>
+
+  <div id="statusParent" style="width:238px; height:300px; float:right; font-famiy:Arial Narrow;">
+    <div><table style="font-size: 12px; display:none; height: 300px;" id="statustable" class="compact hover stripe cell-border">
+<thead><tr><th>Jordan Souza Price</th><th>Status</th></tr></thead>
+<tr><td>Race Status</td><td>Active</td></tr>
+<tr><td>Last Update Rec'd</td><td>04:18:28 PM (PDT) 06/12/21</td></tr>
+<tr><td>Current speed</td><td>18.2 mph</td></tr>
+<tr><td>Route mile</td><td>67.4 mi</td></tr>
+<tr><td>Route average speed</td><td>6.5 mph</td></tr>
+<tr><td>Route distance per day</td><td>156.9 mi</td></tr>
+<tr><td>Moving Time</td><td>0d03h08m</td></tr>
+<tr><td>Stopped Time</td><td>0d07h09m</td></tr>
+<tr><td>Moving Average Speed</td><td>21.4 mph</td></tr>
+<tr><td>Current Elevation</td><td>3599 ft</td></tr>
+<tr><td>Next waypoint</td><td>CHECK 1</td></tr>
+<tr><td>Distance to next waypoint</td><td>101.7 mi</td></tr>
+<tr><td>Est. arrival at waypoint</td><td>07:56:01 AM (PDT) 06/13/21</td></tr>
+</table></div>
+
+    </div>
+
+  <div id="accordianParent" style="width:238px; height:300px; padding:1px; float:right;">
+<div style="display:none;" id="accordion" class="accord">
+<h3><a href="#">All Vehicles (256)</a></h3><div>
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Derek_Ausserbauer">Derek Ausserbauer</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Carlos_Silva">Carlos Silva</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Ana_Rivas">Ana Rivas</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Shane_Redline">Shane Redline</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Hosea_Struiksma">Hosea Struiksma</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Jason_Alosi">Jason Alosi</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=James_Justin_Shultz">James Justin Shultz</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Jorge_Garcia">Jorge Garcia</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Jano_Montoya">Jano Montoya</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Fernando_Beltran">Fernando Beltran</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Ulises_Fierro">Ulises Fierro</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Jorge_Ramirez">Jorge Ramirez</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Christopher_Gil">Christopher Gil</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Hector_Garcia">Hector Garcia</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Vance_Kennedy">Vance Kennedy</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Giovanni_Spinali">Giovanni Spinali</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Ryan_Liebelt">Ryan Liebelt</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=William_St__Laurent">William St. Laurent</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Alirio_Amado">Alirio Amado</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Edgar_Cota">Edgar Cota</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Juan_Carlos_Salvatierra">Juan Carlos Salvatierra</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Fabricio_Fuentes">Fabricio Fuentes</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Scott_McIntosh">Scott McIntosh</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Jos___Luis_V__lez">José Luis Vélez</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Rodrigo_Zahid">Rodrigo Zahid</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Steven_Lopez">Steven Lopez</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Roberto_Villalobos">Roberto Villalobos</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Ricardo_Villafana">Ricardo Villafana</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Scott_Borden">Scott Borden</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Jesse_Smith">Jesse Smith</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Giovanni_Aviles">Giovanni Aviles</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Carlos_Guereca">Carlos Guereca</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Stefano_Migotto">Stefano Migotto</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Esteban_Rodriguez">Esteban Rodriguez</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Filiberto_Garcia">Filiberto Garcia</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Nicolas_Ibarra">Nicolas Ibarra</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Daniel_Gaytan">Daniel Gaytan</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Victor_Higuera">Victor Higuera</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Luis_Ortega">Luis Ortega</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Humberto_Valenzuela">Humberto Valenzuela</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Ruben_Ramos_Garcia">Ruben Ramos Garcia</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Sergio_Gutierrez_Jr_">Sergio Gutierrez Jr.</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Julio_C__Miranda">Julio C. Miranda</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Alejandro_Amador">Alejandro Amador</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Edgar_Barraza">Edgar Barraza</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=David_Nu__ez_Ortega">David Nuñez Ortega</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=M_Unused1">M-Unused1</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=M_Unused2">M-Unused2</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=M_Unused3">M-Unused3</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Luke_McMillin">Luke McMillin</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Justin_Matney">Justin Matney</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Bryce_Menzies">Bryce Menzies</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Apdaly_Lopez">Apdaly Lopez</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Alan_Ampudia">Alan Ampudia</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Rob_MacCachren">Rob MacCachren</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Cameron_Steele">Cameron Steele</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Tim_Herbst">Tim Herbst</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Tavo_Vildosola">Tavo Vildosola</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Jax_Redline">Jax Redline</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Dan_McMillin">Dan McMillin</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Jonathan_Brenthel">Jonathan Brenthel</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Andy_McMillin">Andy McMillin</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Carlos_Pe__u__uri">Carlos Peñuñuri</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Eric_Hustead">Eric Hustead</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Chris_Miller">Chris Miller</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Justin_Lofton">Justin Lofton</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Larry_Roeseler">Larry Roeseler</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Rick_Sanchez">Rick Sanchez</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Dan_Myers">Dan Myers</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=John_T_Lennon">John T Lennon</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Robby_Gordon">Robby Gordon</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Raul_Gomez">Raul Gomez</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Paul_Nauleau">Paul Nauleau</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Enrique_Murillo">Enrique Murillo</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Clyde_Stacy">Clyde Stacy</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Robert_Malone">Robert Malone</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Robbie_Pierce">Robbie Pierce</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Mark_Winkelman">Mark Winkelman</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Rolf_Helland">Rolf Helland</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Cody_Parkhouse">Cody Parkhouse</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Gabriel_Torres">Gabriel Torres</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Mason_Cullen">Mason Cullen</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Broc_Dickerson">Broc Dickerson</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Brian_Wilson">Brian Wilson</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Brad_Wilson">Brad Wilson</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Ruben_Torres">Ruben Torres</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Shelby_Reid">Shelby Reid</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Richard_Glaszczak">Richard Glaszczak</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Mario_Fuentes">Mario Fuentes</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=sergio_salgado">sergio salgado</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Jorge_Sampietro">Jorge Sampietro</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Joe_Delucie">Joe Delucie</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Pat_Sims">Pat Sims</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Valerie_Clark">Valerie Clark</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Chad_Dohrman">Chad Dohrman</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Kyle_Jergensen">Kyle Jergensen</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Ryan_Hancock">Ryan Hancock</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=jose_mendez">jose mendez</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Chad_Hall">Chad Hall</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Chelsea_Magness">Chelsea Magness</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Jason_McNeil">Jason McNeil</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Elijah_Kiger">Elijah Kiger</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Justin_Davis">Justin Davis</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Jeff_Bader">Jeff Bader</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Pierce_Herbst">Pierce Herbst</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Juan_Sanchotena">Juan Sanchotena</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Carlos_Ibarra_Morales">Carlos Ibarra Morales</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Jose_Contreras">Jose Contreras</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Clay_Lawrence">Clay Lawrence</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Rod_Lewis">Rod Lewis</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Ryan_Lewis">Ryan Lewis</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Jason_Coleman">Jason Coleman</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Ryan_Peacock">Ryan Peacock</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Vincent_Mu__oz">Vincent Muñoz</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=William_Hedrick_Jr_">William Hedrick Jr.</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Charles_Dorrance">Charles Dorrance</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Oliver_Flemate">Oliver Flemate</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Freddie_Willert">Freddie Willert</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Jose_David_Ruvalcaba">Jose David Ruvalcaba</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Moises_Cuevas">Moises Cuevas</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Harley_Meservey">Harley Meservey</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Bruce_Yee">Bruce Yee</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Hiram_Duran">Hiram Duran</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Alberto_Mendez">Alberto Mendez</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Eric_F_Duran">Eric F Duran</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Tamara_Myers">Tamara Myers</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Wheeler_Morgan">Wheeler Morgan</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Arturo_V__Malo">Arturo V. Malo</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Andes_Macias_Alvarez">Andes Macias Alvarez</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Matt_Rusich">Matt Rusich</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Ethan_Hagle">Ethan Hagle</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Zack_McLaren">Zack McLaren</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Ty_Godde">Ty Godde</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=JJ_Schnarr">JJ Schnarr</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Eliseo_Garcia">Eliseo Garcia</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Augie_Cortez">Augie Cortez</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Matt_Winslow">Matt Winslow</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Chase_Warren">Chase Warren</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Daniel_Chamlee">Daniel Chamlee</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Scott_Brady">Scott Brady</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Jeff_Proctor">Jeff Proctor</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Mike_Shaffer">Mike Shaffer</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Hammond_Meredith">Hammond Meredith</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Cory_Sappington">Cory Sappington</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Marc_Burnett">Marc Burnett</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Rodrigo_Ampudia">Rodrigo Ampudia</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Brian_Mullenix">Brian Mullenix</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Justin_Lambert">Justin Lambert</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Brandon_Schueler">Brandon Schueler</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Roberto_Ruiz">Roberto Ruiz</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Justin_Smith">Justin Smith</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=jose_may">jose may</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Sean_Cook">Sean Cook</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Craig_Scanlon">Craig Scanlon</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Clinton_Schue">Clinton Schue</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Kolton_Hustead">Kolton Hustead</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Erick_Kozin">Erick Kozin</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Phil_Blurton">Phil Blurton</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Jose_Juarez">Jose Juarez</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Matt_Burroughs">Matt Burroughs</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Alonso_Lopez">Alonso Lopez</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Austin_Weiland">Austin Weiland</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Rafael_Navarro_III">Rafael Navarro III</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Mike_Pratt">Mike Pratt</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Branden_Sims">Branden Sims</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Francisco_J__Beltran">Francisco J. Beltran</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Jorge_Cano">Jorge Cano</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Mike_Cafro">Mike Cafro</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Jesus_Mendez_Jr_">Jesus Mendez Jr.</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Jose_Juarez">Jose Juarez</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Edgar_Garcia_Leon">Edgar Garcia Leon</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Wes_Miller">Wes Miller</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=PJ_Jones">PJ Jones</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Matias_Arjona_IV">Matias Arjona IV</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Miguel_Cortez">Miguel Cortez</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Rich_Roberts">Rich Roberts</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Marco_Acosta">Marco Acosta</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Oscar_Alvarez">Oscar Alvarez</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Matt_Ferrato">Matt Ferrato</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Scott_Wisdom">Scott Wisdom</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Doug_Satterfield">Doug Satterfield</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Eric_Palacios">Eric Palacios</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Mike_Aguilar">Mike Aguilar</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Quirino_Rene_Gutierrez">Quirino Rene Gutierrez</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Paul_Barnhart_Jr_">Paul Barnhart Jr.</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Elias_Hanna">Elias Hanna</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Zach_Sizelove">Zach Sizelove</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Jimmy_Rodriguez">Jimmy Rodriguez</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Kristen_Matlock">Kristen Matlock</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Joe_Bolton">Joe Bolton</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Allen_Alexander">Allen Alexander</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Dodge_Poelman">Dodge Poelman</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Adrian_Orellana">Adrian Orellana</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Kaden_Wells">Kaden Wells</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Eli_Yee">Eli Yee</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Jordan_Souza_Price">Jordan Souza Price</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Kevin_Sanchez">Kevin Sanchez</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=martin_rangel">martin rangel</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Ernesto_Martinez">Ernesto Martinez</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Enrique_Zazueta_Jr_">Enrique Zazueta Jr.</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Carlos_Jaffet_Jimenez">Carlos Jaffet Jimenez</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Ruben_ozuna_gallardo">Ruben ozuna gallardo</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Hector_Jimenez">Hector Jimenez</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=James_Hill">James Hill</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Carolina_Sanchez">Carolina Sanchez</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Anibal_Lopez">Anibal Lopez</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Douglas_Cornwell">Douglas Cornwell</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Scott_Trafton">Scott Trafton</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Manuel_reyes">Manuel reyes</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Alonso_Gonzalez">Alonso Gonzalez</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Nick_Bruce">Nick Bruce</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Mike_Cafro">Mike Cafro</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Mike_Hales">Mike Hales</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Mitch_Guthrie_Jr_">Mitch Guthrie Jr.</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Justin_Elenburg">Justin Elenburg</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Wayne_Matlock">Wayne Matlock</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Josh_Herzing">Josh Herzing</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Michelle_Barraza">Michelle Barraza</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Norman_Turley">Norman Turley</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Cameron_Ornelas">Cameron Ornelas</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Marco_A__Bernaldez">Marco A. Bernaldez</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Greg_Sullivan">Greg Sullivan</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Gerardo_Ibarra">Gerardo Ibarra</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Larry_Negrete_Jr_">Larry Negrete Jr.</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Alejandro_Medina">Alejandro Medina</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=David_Heredia">David Heredia</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Jorge_Gutierrez">Jorge Gutierrez</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Hector_Hurtado">Hector Hurtado</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Jay_Jakupca">Jay Jakupca</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Edward_Muncey">Edward Muncey</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Axl_Cortez">Axl Cortez</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Brandon_Walsh">Brandon Walsh</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Justin_Park">Justin Park</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Arturo_Montano">Arturo Montano</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Dario_Serrano">Dario Serrano</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Armando_Dur__n">Armando Durón</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Eric_Solorzano">Eric Solorzano</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Adriel_Jordan">Adriel Jordan</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Nick_Hamm">Nick Hamm</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Mike_Steel">Mike Steel</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Ricardo_Rodr__guez">Ricardo Rodríguez</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Rafael_Figueroa">Rafael Figueroa</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Alex_Gonzales">Alex Gonzales</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Sterling_Becklin">Sterling Becklin</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=C_Unused1">C-Unused1</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=C_Unused2">C-Unused2</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=C_Unused3">C-Unused3</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=C_Unused4">C-Unused4</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=C_Unused5">C-Unused5</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=C_Unused6">C-Unused6</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=C_Unused7">C-Unused7</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Org1">Org1</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Org2">Org2</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Org3">Org3</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Org4">Org4</a><br />
+<a title='Click for individual history' target='_blank' style="padding-left: 10px;" href="baja500-21i.php?name=Org5">Org5</a><br />
+</div>
+<h3><a href="#">Checkpoints</a></h3><div><form autocomplete="off" action="#">
+<h3>21-BAJA 500 RC 5.20</h3><a href='javascript:{ map.openPopup("<b>CHECK 1</b><br>169.1 mi", [30.982351,-115.748789]); }' title="Focus on CHECK 1"><span style="float: left; padding-right: 3px;" class="ui-icon ui-icon-search"></span> CHECK 1 </a><br />
+<a href='javascript:{ map.openPopup("<b>CHECK 2</b><br>303.7 mi", [30.743926,-115.998703]); }' title="Focus on CHECK 2"><span style="float: left; padding-right: 3px;" class="ui-icon ui-icon-search"></span> CHECK 2 </a><br />
+<a href='javascript:{ map.openPopup("<b>Start/Finish</b><br>464.5 mi", [31.921272,-116.577117]); }' title="Focus on Start/Finish"><span style="float: left; padding-right: 3px;" class="ui-icon ui-icon-search"></span> Start/Finish </a><br />
+<h3>SPORTSMAN CUT</h3><a href='javascript:{ map.openPopup("<b>CHECK 1</b><br>2.1 mi", [30.982351,-115.748789]); }' title="Focus on CHECK 1"><span style="float: left; padding-right: 3px;" class="ui-icon ui-icon-search"></span> CHECK 1 </a><br />
+<a href='javascript:{ map.openPopup("<b>CHECK 2</b><br>22.1 mi", [30.743926,-115.998703]); }' title="Focus on CHECK 2"><span style="float: left; padding-right: 3px;" class="ui-icon ui-icon-search"></span> CHECK 2 </a><br />
+<a href='javascript:{ map.openPopup("<b>Start/Finish</b><br>193 ft", [31.921272,-116.577117]); }' title="Focus on Start/Finish"><span style="float: left; padding-right: 3px;" class="ui-icon ui-icon-search"></span> Start/Finish </a><br />
+</form></div>
+<h3><a href="#">Map Layers</a></h3><div><form autocomplete="off" action="#">
+<input type="checkbox" onClick="fastlayerclick(this,'rm5.js')" id="racemilesLayer" /> Race Miles layer <br />
+<input type="checkbox" onClick="fastlayerclick(this,'rm50.js')" id="rm50check" /> Race Miles (50 mi) layer <br />
+</form></div>
+</div>
+   </div>
+<br />
+
+<button type="button" id="refreshMapButton">Refresh Location</button>
+
+<br /><br />
+
+
+<h2>Jordan Souza Price</h2>
+<img class=tlavatar align=left height=90 hspace=5 src="http://trackleaders.com/spot/baja500-21/b521.png"><br />  <b>Categoria: </b>Car-Truck-UTV<br><b>Vehiculo: </b>-<br><b>Club: </b>-<br><b>Clase: </b>Class 1/2-1600 <br /><br /><br /> <h3>Recent History</h3><a href='javascript:{imarker540.openPopup();}'>#420 on 04:18:28 PM (PDT) 06/12/21</a> (4 minutes ago) 8 ft traveled at 0.1 mph<br />
+<a href='javascript:{imarker539.openPopup();}'>#419 on 04:17:43 PM (PDT) 06/12/21</a> (5 minutes ago) 8 ft traveled at 0.1 mph<br />
+<a href='javascript:{imarker538.openPopup();}'>#418 on 04:16:21 PM (PDT) 06/12/21</a> (6 minutes ago) 8 ft traveled at 0.1 mph<br />
+<a href='javascript:{imarker537.openPopup();}'>#417 on 04:15:38 PM (PDT) 06/12/21</a> (7 minutes ago) 8 ft traveled at 0.0 mph<br />
+<a href='javascript:{imarker536.openPopup();}'>#416 on 04:13:42 PM (PDT) 06/12/21</a> (9 minutes ago) 5 ft traveled at 0.0 mph<br />
+<a href='javascript:{imarker535.openPopup();}'>#415 on 04:09:44 PM (PDT) 06/12/21</a> (13 minutes ago) 5 ft traveled at 0.1 mph<br />
+<a href='javascript:{imarker534.openPopup();}'>#414 on 04:09:04 PM (PDT) 06/12/21</a> (14 minutes ago) 5 ft traveled at 0.1 mph<br />
+<a href='javascript:{imarker533.openPopup();}'>#413 on 04:08:25 PM (PDT) 06/12/21</a> (14 minutes ago) 0 ft traveled at 0.0 mph<br />
+<a href='javascript:{imarker532.openPopup();}'>#412 on 04:07:42 PM (PDT) 06/12/21</a> (15 minutes ago) 0 ft traveled at 0.0 mph<br />
+<a href='javascript:{imarker531.openPopup();}'>#411 on 04:00:16 PM (PDT) 06/12/21</a> (22 minutes ago) 0 ft traveled at 0.0 mph<br />
+<br /><h3>Speed plot:</h3>
+ <br /><div id="placeholder" style="height:225px;"></div>                       <script id="source" language="javascript" type="text/javascript">                      $(function () {					                     var d1 = []; d1.push([0.0, 0.0]);d1.push([0.0, 0.0]);d1.push([0.0, 0.1]);d1.push([0.0, 0.0]);d1.push([0.0, 0.0]);d1.push([0.0, 0.0]);d1.push([0.0, 0.1]);d1.push([0.0, 0.0]);d1.push([0.0, 0.1]);d1.push([0.0, 0.0]);d1.push([0.0, 0.0]);d1.push([0.0, 0.0]);d1.push([0.0, 0.1]);d1.push([0.0, 0.1]);d1.push([0.0, 0.0]);d1.push([0.0, 0.0]);d1.push([0.0, 0.0]);d1.push([0.0, 0.0]);d1.push([0.0, 0.0]);d1.push([0.0, 0.0]);d1.push([0.0, 0.0]);d1.push([0.0, 0.2]);d1.push([0.0, 0.0]);d1.push([0.0, 0.1]);d1.push([0.0, 0.1]);d1.push([0.0, 0.1]);d1.push([0.0, 0.1]);d1.push([0.0, 0.0]);d1.push([0.0, 0.0]);d1.push([0.0, 0.0]);d1.push([0.0, 0.0]);d1.push([0.0, 0.1]);d1.push([0.0, 0.0]);d1.push([0.0, 0.0]);d1.push([0.0, 0.0]);d1.push([0.0, 0.1]);d1.push([0.0, 0.0]);d1.push([0.0, 0.1]);d1.push([0.0, 0.0]);d1.push([0.0, 0.0]);d1.push([0.0, 0.0]);d1.push([0.0, 0.0]);d1.push([0.0, 0.1]);d1.push([0.0, 0.1]);d1.push([0.0, 0.1]);d1.push([0.0, 0.0]);d1.push([0.1, 0.1]);d1.push([0.1, 0.0]);d1.push([0.1, 0.0]);d1.push([0.1, 0.0]);d1.push([0.1, 0.1]);d1.push([0.1, 0.0]);d1.push([0.1, 0.1]);d1.push([0.1, 0.1]);d1.push([0.1, 0.0]);d1.push([0.1, 0.0]);d1.push([0.1, 0.1]);d1.push([0.1, 0.2]);d1.push([0.1, 0.1]);d1.push([0.1, 0.0]);d1.push([0.1, 0.1]);d1.push([0.1, 0.1]);d1.push([0.1, 0.0]);d1.push([0.1, 0.1]);d1.push([0.1, 0.5]);d1.push([0.1, 3.3]);d1.push([0.3, 6.1]);d1.push([0.4, 9.4]);d1.push([0.6, 8.5]);d1.push([0.7, 9.8]);d1.push([0.9, 7.6]);d1.push([1.0, 9.8]);d1.push([1.2, 11.9]);d1.push([1.6, 22.3]);d1.push([2.2, 34.0]);d1.push([2.7, 26.5]);d1.push([3.2, 37.5]);d1.push([3.5, 19.0]);d1.push([3.9, 23.7]);d1.push([4.3, 20.5]);d1.push([4.5, 14.5]);d1.push([4.8, 18.0]);d1.push([5.3, 27.8]);d1.push([5.7, 25.0]);d1.push([6.0, 17.2]);d1.push([6.3, 21.5]);d1.push([6.7, 19.2]);d1.push([6.9, 21.6]);d1.push([7.5, 25.9]);d1.push([7.6, 8.9]);d1.push([7.8, 12.0]);d1.push([8.0, 9.0]);d1.push([8.0, 0.1]);d1.push([8.1, 10.2]);d1.push([8.3, 14.0]);d1.push([8.5, 8.6]);d1.push([8.8, 19.9]);d1.push([9.5, 35.3]);d1.push([9.9, 30.9]);d1.push([10.3, 25.9]);d1.push([10.8, 25.5]);d1.push([11.5, 34.5]);d1.push([11.5, 2.4]);d1.push([11.5, 2.5]);d1.push([11.7, 7.2]);d1.push([11.7, 0.2]);d1.push([11.7, 0.1]);d1.push([11.7, 0.0]);d1.push([11.7, 0.1]);d1.push([11.7, 0.2]);d1.push([11.7, 0.2]);d1.push([11.7, 0.1]);d1.push([11.7, 0.1]);d1.push([11.7, 0.0]);d1.push([11.7, 0.2]);d1.push([11.7, 0.1]);d1.push([11.7, 0.1]);d1.push([11.7, 0.1]);d1.push([11.7, 0.1]);d1.push([11.7, 0.3]);d1.push([11.7, 0.0]);d1.push([11.7, 0.0]);d1.push([11.7, 0.2]);d1.push([11.7, 0.1]);d1.push([11.7, 0.0]);d1.push([11.7, 0.0]);d1.push([11.7, 0.1]);d1.push([11.7, 0.1]);d1.push([11.7, 0.1]);d1.push([11.7, 0.0]);d1.push([11.7, 0.1]);d1.push([11.7, 0.1]);d1.push([11.7, 0.3]);d1.push([11.7, 0.2]);d1.push([11.7, 0.1]);d1.push([11.7, 0.0]);d1.push([11.7, 0.0]);d1.push([11.7, 0.1]);d1.push([11.7, 0.1]);d1.push([11.7, 0.1]);d1.push([11.7, 0.9]);d1.push([11.8, 3.7]);d1.push([11.8, 0.4]);d1.push([11.8, 0.0]);d1.push([11.8, 0.0]);d1.push([11.8, 0.1]);d1.push([11.8, 0.1]);d1.push([11.8, 0.1]);d1.push([11.8, 0.1]);d1.push([11.8, 0.1]);d1.push([11.8, 0.1]);d1.push([11.8, 0.1]);d1.push([11.8, 0.1]);d1.push([11.8, 0.1]);d1.push([11.8, 0.1]);d1.push([11.8, 0.1]);d1.push([11.8, 0.2]);d1.push([12.1, 22.1]);d1.push([12.4, 12.7]);d1.push([12.4, 0.1]);d1.push([12.4, 0.0]);d1.push([12.4, 2.6]);d1.push([12.5, 1.0]);d1.push([12.5, 0.0]);d1.push([12.5, 0.1]);d1.push([12.5, 0.0]);d1.push([12.5, 0.1]);d1.push([12.5, 1.9]);d1.push([12.5, 0.1]);d1.push([12.5, 0.1]);d1.push([12.5, 0.1]);d1.push([12.5, 0.1]);d1.push([12.5, 0.1]);d1.push([12.5, 0.1]);d1.push([12.5, 0.1]);d1.push([12.5, 0.1]);d1.push([12.5, 0.1]);d1.push([12.5, 0.1]);d1.push([12.5, 0.1]);d1.push([12.5, 0.3]);d1.push([12.5, 0.0]);d1.push([12.5, 0.4]);d1.push([12.5, 0.1]);d1.push([12.5, 0.0]);d1.push([12.5, 0.1]);d1.push([12.5, 0.0]);d1.push([12.5, 0.1]);d1.push([12.5, 0.0]);d1.push([12.5, 0.0]);d1.push([12.5, 0.1]);d1.push([12.5, 0.1]);d1.push([12.5, 0.1]);d1.push([12.5, 0.0]);d1.push([12.5, 0.1]);d1.push([12.5, 0.0]);d1.push([12.5, 0.1]);d1.push([12.5, 0.1]);d1.push([12.5, 0.0]);d1.push([12.5, 0.0]);d1.push([12.5, 0.0]);d1.push([12.5, 0.2]);d1.push([12.5, 0.1]);d1.push([12.5, 0.1]);d1.push([12.5, 0.0]);d1.push([12.5, 0.1]);d1.push([12.5, 0.1]);d1.push([12.5, 0.1]);d1.push([12.5, 0.1]);d1.push([12.5, 0.0]);d1.push([12.5, 0.1]);d1.push([12.5, 0.2]);d1.push([12.5, 0.0]);d1.push([12.5, 0.0]);d1.push([12.5, 0.2]);d1.push([12.5, 0.1]);d1.push([12.5, 0.1]);d1.push([12.5, 0.1]);d1.push([12.5, 0.1]);d1.push([12.5, 0.0]);d1.push([12.5, 0.1]);d1.push([12.5, 0.0]);d1.push([12.5, 0.0]);d1.push([12.5, 0.1]);d1.push([12.6, 0.1]);d1.push([12.6, 0.2]);d1.push([12.6, 0.0]);d1.push([12.6, 0.0]);d1.push([12.6, 0.0]);d1.push([12.6, 0.1]);d1.push([12.6, 0.0]);d1.push([12.6, 0.1]);d1.push([12.6, 0.1]);d1.push([12.6, 0.0]);d1.push([12.6, 0.0]);d1.push([12.6, 0.1]);d1.push([12.6, 0.1]);d1.push([12.6, 0.0]);d1.push([12.6, 0.1]);d1.push([12.6, 0.0]);d1.push([12.6, 0.1]);d1.push([12.6, 0.1]);d1.push([12.6, 0.2]);d1.push([12.6, 0.1]);d1.push([12.6, 0.1]);d1.push([12.6, 0.0]);d1.push([12.6, 0.1]);d1.push([12.6, 0.1]);d1.push([12.6, 0.2]);d1.push([12.6, 0.2]);d1.push([12.6, 0.1]);d1.push([12.6, 0.1]);d1.push([12.6, 0.1]);d1.push([12.6, 0.0]);d1.push([12.6, 0.1]);d1.push([12.6, 0.1]);d1.push([12.6, 0.1]);d1.push([12.6, 0.1]);d1.push([12.6, 0.1]);d1.push([12.6, 0.1]);d1.push([12.6, 0.1]);d1.push([12.6, 0.1]);d1.push([12.6, 0.1]);d1.push([12.6, 0.1]);d1.push([12.6, 0.0]);d1.push([12.6, 2.2]);d1.push([12.7, 3.0]);d1.push([12.8, 5.9]);d1.push([12.8, 0.1]);d1.push([12.8, 2.1]);d1.push([12.8, 1.3]);d1.push([12.8, 0.0]);d1.push([12.9, 1.5]);d1.push([12.9, 0.1]);d1.push([12.9, 0.8]);d1.push([12.9, 0.3]);d1.push([12.9, 0.5]);d1.push([12.9, 0.5]);d1.push([12.9, 0.5]);d1.push([12.9, 1.2]);d1.push([12.9, 1.2]);d1.push([12.9, 0.1]);d1.push([12.9, 0.1]);d1.push([13.0, 0.4]);d1.push([13.0, 0.1]);d1.push([13.0, 0.7]);d1.push([13.0, 1.1]);d1.push([13.0, 0.4]);d1.push([13.0, 0.9]);d1.push([13.0, 0.6]);d1.push([13.0, 0.8]);d1.push([13.0, 0.5]);d1.push([13.0, 0.7]);d1.push([13.1, 0.8]);d1.push([13.3, 12.6]);d1.push([14.3, 59.9]);d1.push([15.4, 63.6]);d1.push([15.9, 32.5]);d1.push([16.5, 32.8]);d1.push([17.0, 30.4]);d1.push([17.3, 22.6]);d1.push([17.8, 30.2]);d1.push([18.2, 21.7]);d1.push([18.2, 22.6]);d1.push([19.4, 24.3]);d1.push([19.7, 23.2]);d1.push([20.1, 21.3]);d1.push([20.6, 22.7]);d1.push([21.3, 18.1]);d1.push([21.8, 21.0]);d1.push([22.3, 20.1]);d1.push([22.7, 19.7]);d1.push([23.9, 15.3]);d1.push([24.5, 25.4]);d1.push([24.9, 32.3]);d1.push([26.1, 32.7]);d1.push([26.6, 25.9]);d1.push([26.9, 31.3]);d1.push([27.2, 27.4]);d1.push([28.7, 25.0]);d1.push([29.2, 35.8]);d1.push([30.4, 33.1]);d1.push([31.4, 30.4]);d1.push([31.5, 11.3]);d1.push([32.3, 20.7]);d1.push([32.6, 28.4]);d1.push([32.8, 22.1]);d1.push([33.0, 4.9]);d1.push([33.3, 12.9]);d1.push([33.5, 20.9]);d1.push([33.8, 12.5]);d1.push([34.8, 19.3]);d1.push([35.4, 20.4]);d1.push([35.7, 20.6]);d1.push([36.1, 20.8]);d1.push([37.6, 15.6]);d1.push([40.9, 22.0]);d1.push([41.2, 19.0]);d1.push([41.7, 21.9]);d1.push([43.9, 18.5]);d1.push([48.5, 25.5]);d1.push([48.7, 22.2]);d1.push([50.2, 18.9]);d1.push([50.6, 32.8]);d1.push([52.6, 25.6]);d1.push([53.2, 10.2]);d1.push([53.2, 0.2]);d1.push([53.2, 0.2]);d1.push([54.1, 6.1]);d1.push([54.4, 22.8]);d1.push([55.1, 11.8]);d1.push([55.1, 0.1]);d1.push([55.1, 0.0]);d1.push([55.1, 0.1]);d1.push([55.2, 0.1]);d1.push([55.2, 0.0]);d1.push([55.2, 0.0]);d1.push([55.2, 0.1]);d1.push([55.2, 0.1]);d1.push([55.2, 0.0]);d1.push([55.2, 0.0]);d1.push([55.2, 0.0]);d1.push([55.2, 0.1]);d1.push([55.2, 0.1]);d1.push([55.2, 0.0]);d1.push([55.2, 0.0]);d1.push([55.2, 2.9]);d1.push([55.2, 0.0]);d1.push([55.2, 0.0]);d1.push([55.2, 0.1]);d1.push([55.3, 5.3]);d1.push([56.0, 26.9]);d1.push([56.5, 26.5]);d1.push([56.8, 18.3]);d1.push([57.0, 32.1]);d1.push([57.7, 23.7]);d1.push([58.5, 37.7]);d1.push([58.9, 44.9]);d1.push([60.0, 44.1]);d1.push([62.2, 45.1]);d1.push([64.9, 68.5]);d1.push([66.6, 70.4]);d1.push([67.5, 72.7]);d1.push([69.0, 67.2]);d1.push([69.5, 13.8]);d1.push([69.5, 0.0]);d1.push([69.5, 0.0]);d1.push([69.5, 0.0]);d1.push([69.5, 0.0]);d1.push([69.5, 0.0]);d1.push([69.5, 0.1]);d1.push([69.5, 0.0]);d1.push([69.5, 0.1]);d1.push([69.5, 0.0]);d1.push([69.5, 0.0]);d1.push([69.5, 0.0]);d1.push([69.5, 0.0]);d1.push([69.5, 0.0]);d1.push([69.5, 0.0]);d1.push([69.5, 0.1]);d1.push([69.5, 0.1]);d1.push([69.5, 0.0]);d1.push([69.5, 0.0]);d1.push([69.5, 0.0]);d1.push([69.5, 0.0]);d1.push([69.5, 0.0]);d1.push([69.5, 0.0]);d1.push([69.5, 0.0]);d1.push([69.5, 0.0]);d1.push([69.5, 0.1]);d1.push([69.5, 0.0]);d1.push([69.5, 0.0]);d1.push([69.5, 0.0]);d1.push([69.5, 0.0]);d1.push([69.5, 0.1]);d1.push([69.5, 0.1]);d1.push([69.5, 0.0]);d1.push([69.5, 0.0]);d1.push([69.5, 0.1]);d1.push([69.5, 0.1]);d1.push([69.5, 0.1]);var options = {  xaxis: { zoomRange: [0, 69.51], panRange: [0, 69.51] },
+    yaxis: { zoomRange: [0.1, 100], panRange: [0, 100] },
+    zoom: { interactive: true }, pan: { interactive: true } , grid: {hoverable: true} };
+$.plot($("#placeholder"), [ { label: "speed (mph)",  data: d1, lines: { show: true, fill: true } } ], options);  });                        </script>        			  <center>(x-axis = miles)</center> <br /><h3>Speed vs Time plot:</h3>
+ <br /><div id="placeholder2" style="height:225px;"></div>                       <script id="source" language="javascript" type="text/javascript">                      $(function () {					                     var d2 = []; d2.push([0.0, 0.0]);d2.push([0.0, 0.0]);d2.push([0.0, 0.1]);d2.push([0.0, 0.0]);d2.push([0.1, 0.0]);d2.push([0.1, 0.0]);d2.push([0.1, 0.1]);d2.push([0.1, 0.0]);d2.push([0.1, 0.1]);d2.push([0.1, 0.0]);d2.push([0.2, 0.0]);d2.push([0.2, 0.0]);d2.push([0.2, 0.1]);d2.push([0.3, 0.1]);d2.push([0.3, 0.0]);d2.push([0.4, 0.0]);d2.push([0.4, 0.0]);d2.push([0.4, 0.0]);d2.push([0.5, 0.0]);d2.push([0.5, 0.0]);d2.push([0.5, 0.0]);d2.push([0.5, 0.2]);d2.push([0.6, 0.0]);d2.push([0.6, 0.1]);d2.push([0.6, 0.1]);d2.push([0.6, 0.1]);d2.push([0.6, 0.1]);d2.push([0.6, 0.0]);d2.push([0.7, 0.0]);d2.push([0.7, 0.0]);d2.push([0.7, 0.0]);d2.push([0.7, 0.1]);d2.push([0.7, 0.0]);d2.push([0.8, 0.0]);d2.push([0.9, 0.0]);d2.push([0.9, 0.1]);d2.push([0.9, 0.0]);d2.push([0.9, 0.1]);d2.push([0.9, 0.0]);d2.push([1.0, 0.0]);d2.push([1.0, 0.0]);d2.push([1.0, 0.0]);d2.push([1.0, 0.1]);d2.push([1.1, 0.1]);d2.push([1.1, 0.1]);d2.push([1.1, 0.0]);d2.push([1.1, 0.1]);d2.push([1.1, 0.0]);d2.push([1.1, 0.0]);d2.push([1.2, 0.0]);d2.push([1.2, 0.1]);d2.push([1.2, 0.0]);d2.push([1.2, 0.1]);d2.push([1.2, 0.1]);d2.push([1.3, 0.0]);d2.push([1.3, 0.0]);d2.push([1.3, 0.1]);d2.push([1.3, 0.2]);d2.push([1.4, 0.1]);d2.push([1.4, 0.0]);d2.push([1.5, 0.1]);d2.push([1.5, 0.1]);d2.push([1.5, 0.0]);d2.push([1.5, 0.1]);d2.push([1.5, 0.5]);d2.push([1.6, 3.3]);d2.push([1.6, 6.1]);d2.push([1.6, 9.4]);d2.push([1.6, 8.5]);d2.push([1.6, 9.8]);d2.push([1.6, 7.6]);d2.push([1.7, 9.8]);d2.push([1.7, 11.9]);d2.push([1.7, 22.3]);d2.push([1.7, 34.0]);d2.push([1.7, 26.5]);d2.push([1.7, 37.5]);d2.push([1.8, 19.0]);d2.push([1.8, 23.7]);d2.push([1.8, 20.5]);d2.push([1.8, 14.5]);d2.push([1.8, 18.0]);d2.push([1.8, 27.8]);d2.push([1.9, 25.0]);d2.push([1.9, 17.2]);d2.push([1.9, 21.5]);d2.push([1.9, 19.2]);d2.push([1.9, 21.6]);d2.push([2.0, 25.9]);d2.push([2.0, 8.9]);d2.push([2.0, 12.0]);d2.push([2.0, 9.0]);d2.push([2.0, 0.1]);d2.push([2.0, 10.2]);d2.push([2.1, 14.0]);d2.push([2.1, 8.6]);d2.push([2.1, 19.9]);d2.push([2.1, 35.3]);d2.push([2.1, 30.9]);d2.push([2.1, 25.9]);d2.push([2.1, 25.5]);d2.push([2.2, 34.5]);d2.push([2.2, 2.4]);d2.push([2.2, 2.5]);d2.push([2.2, 7.2]);d2.push([2.2, 0.2]);d2.push([2.2, 0.1]);d2.push([2.3, 0.0]);d2.push([2.3, 0.1]);d2.push([2.3, 0.2]);d2.push([2.3, 0.2]);d2.push([2.3, 0.1]);d2.push([2.3, 0.1]);d2.push([2.4, 0.0]);d2.push([2.4, 0.2]);d2.push([2.4, 0.1]);d2.push([2.4, 0.1]);d2.push([2.4, 0.1]);d2.push([2.5, 0.1]);d2.push([2.5, 0.3]);d2.push([2.5, 0.0]);d2.push([2.5, 0.0]);d2.push([2.5, 0.2]);d2.push([2.5, 0.1]);d2.push([2.6, 0.0]);d2.push([2.6, 0.0]);d2.push([2.6, 0.1]);d2.push([2.6, 0.1]);d2.push([2.6, 0.1]);d2.push([2.6, 0.0]);d2.push([2.6, 0.1]);d2.push([2.7, 0.1]);d2.push([2.7, 0.3]);d2.push([2.7, 0.2]);d2.push([2.7, 0.1]);d2.push([2.9, 0.0]);d2.push([2.9, 0.0]);d2.push([3.0, 0.1]);d2.push([3.0, 0.1]);d2.push([3.0, 0.1]);d2.push([3.0, 0.9]);d2.push([3.0, 3.7]);d2.push([3.0, 0.4]);d2.push([3.1, 0.0]);d2.push([3.1, 0.0]);d2.push([3.1, 0.1]);d2.push([3.1, 0.1]);d2.push([3.1, 0.1]);d2.push([3.1, 0.1]);d2.push([3.2, 0.1]);d2.push([3.2, 0.1]);d2.push([3.2, 0.1]);d2.push([3.2, 0.1]);d2.push([3.2, 0.1]);d2.push([3.2, 0.1]);d2.push([3.2, 0.1]);d2.push([3.3, 0.2]);d2.push([3.3, 22.1]);d2.push([3.3, 12.7]);d2.push([3.3, 0.1]);d2.push([3.3, 0.0]);d2.push([3.3, 2.6]);d2.push([3.4, 1.0]);d2.push([3.4, 0.0]);d2.push([3.4, 0.1]);d2.push([3.4, 0.0]);d2.push([3.4, 0.1]);d2.push([3.4, 1.9]);d2.push([3.5, 0.1]);d2.push([3.5, 0.1]);d2.push([3.5, 0.1]);d2.push([3.5, 0.1]);d2.push([3.5, 0.1]);d2.push([3.6, 0.1]);d2.push([3.6, 0.1]);d2.push([3.6, 0.1]);d2.push([3.6, 0.1]);d2.push([3.6, 0.1]);d2.push([3.6, 0.1]);d2.push([3.6, 0.3]);d2.push([3.7, 0.0]);d2.push([3.7, 0.4]);d2.push([3.7, 0.1]);d2.push([3.7, 0.0]);d2.push([3.7, 0.1]);d2.push([3.7, 0.0]);d2.push([3.8, 0.1]);d2.push([3.8, 0.0]);d2.push([3.8, 0.0]);d2.push([3.8, 0.1]);d2.push([3.8, 0.1]);d2.push([3.8, 0.1]);d2.push([3.9, 0.0]);d2.push([3.9, 0.1]);d2.push([3.9, 0.0]);d2.push([3.9, 0.1]);d2.push([3.9, 0.1]);d2.push([3.9, 0.0]);d2.push([3.9, 0.0]);d2.push([4.0, 0.0]);d2.push([4.0, 0.2]);d2.push([4.0, 0.1]);d2.push([4.0, 0.1]);d2.push([4.1, 0.0]);d2.push([4.1, 0.1]);d2.push([4.1, 0.1]);d2.push([4.1, 0.1]);d2.push([4.1, 0.1]);d2.push([4.1, 0.0]);d2.push([4.2, 0.1]);d2.push([4.2, 0.2]);d2.push([4.2, 0.0]);d2.push([4.2, 0.0]);d2.push([4.2, 0.2]);d2.push([4.2, 0.1]);d2.push([4.2, 0.1]);d2.push([4.3, 0.1]);d2.push([4.3, 0.1]);d2.push([4.3, 0.0]);d2.push([4.3, 0.1]);d2.push([4.3, 0.0]);d2.push([4.3, 0.0]);d2.push([4.4, 0.1]);d2.push([4.4, 0.1]);d2.push([4.4, 0.2]);d2.push([4.4, 0.0]);d2.push([4.4, 0.0]);d2.push([4.4, 0.0]);d2.push([4.5, 0.1]);d2.push([4.5, 0.0]);d2.push([4.5, 0.1]);d2.push([4.5, 0.1]);d2.push([4.5, 0.0]);d2.push([4.6, 0.0]);d2.push([4.6, 0.1]);d2.push([4.6, 0.1]);d2.push([4.6, 0.0]);d2.push([4.6, 0.1]);d2.push([4.6, 0.0]);d2.push([4.7, 0.1]);d2.push([4.7, 0.1]);d2.push([4.7, 0.2]);d2.push([4.7, 0.1]);d2.push([4.7, 0.1]);d2.push([4.7, 0.0]);d2.push([4.8, 0.1]);d2.push([4.8, 0.1]);d2.push([4.8, 0.2]);d2.push([4.8, 0.2]);d2.push([4.8, 0.1]);d2.push([4.8, 0.1]);d2.push([4.8, 0.1]);d2.push([4.9, 0.0]);d2.push([4.9, 0.1]);d2.push([4.9, 0.1]);d2.push([4.9, 0.1]);d2.push([4.9, 0.1]);d2.push([4.9, 0.1]);d2.push([5.0, 0.1]);d2.push([5.0, 0.1]);d2.push([5.0, 0.1]);d2.push([5.0, 0.1]);d2.push([5.0, 0.1]);d2.push([5.0, 0.0]);d2.push([5.0, 2.2]);d2.push([5.1, 3.0]);d2.push([5.1, 5.9]);d2.push([5.1, 0.1]);d2.push([5.1, 2.1]);d2.push([5.2, 1.3]);d2.push([5.2, 0.0]);d2.push([5.2, 1.5]);d2.push([5.2, 0.1]);d2.push([5.2, 0.8]);d2.push([5.2, 0.3]);d2.push([5.3, 0.5]);d2.push([5.3, 0.5]);d2.push([5.3, 0.5]);d2.push([5.3, 1.2]);d2.push([5.3, 1.2]);d2.push([5.3, 0.1]);d2.push([5.4, 0.1]);d2.push([5.4, 0.4]);d2.push([5.4, 0.1]);d2.push([5.4, 0.7]);d2.push([5.4, 1.1]);d2.push([5.4, 0.4]);d2.push([5.4, 0.9]);d2.push([5.5, 0.6]);d2.push([5.5, 0.8]);d2.push([5.5, 0.5]);d2.push([5.5, 0.7]);d2.push([5.5, 0.8]);d2.push([5.5, 12.6]);d2.push([5.6, 59.9]);d2.push([5.6, 63.6]);d2.push([5.6, 32.5]);d2.push([5.6, 32.8]);d2.push([5.6, 30.4]);d2.push([5.7, 22.6]);d2.push([5.7, 30.2]);d2.push([5.7, 21.7]);d2.push([5.7, 22.6]);d2.push([5.7, 24.3]);d2.push([5.8, 23.2]);d2.push([5.8, 21.3]);d2.push([5.8, 22.7]);d2.push([5.8, 18.1]);d2.push([5.8, 21.0]);d2.push([5.9, 20.1]);d2.push([5.9, 19.7]);d2.push([6.0, 15.3]);d2.push([6.0, 25.4]);d2.push([6.0, 32.3]);d2.push([6.0, 32.7]);d2.push([6.1, 25.9]);d2.push([6.1, 31.3]);d2.push([6.1, 27.4]);d2.push([6.2, 25.0]);d2.push([6.2, 35.8]);d2.push([6.2, 33.1]);d2.push([6.2, 30.4]);d2.push([6.3, 11.3]);d2.push([6.3, 20.7]);d2.push([6.3, 28.4]);d2.push([6.3, 22.1]);d2.push([6.3, 4.9]);d2.push([6.4, 12.9]);d2.push([6.4, 20.9]);d2.push([6.4, 12.5]);d2.push([6.4, 19.3]);d2.push([6.5, 20.4]);d2.push([6.5, 20.6]);d2.push([6.5, 20.8]);d2.push([6.6, 15.6]);d2.push([6.8, 22.0]);d2.push([6.8, 19.0]);d2.push([6.8, 21.9]);d2.push([6.9, 18.5]);d2.push([7.1, 25.5]);d2.push([7.1, 22.2]);d2.push([7.2, 18.9]);d2.push([7.2, 32.8]);d2.push([7.3, 25.6]);d2.push([7.3, 10.2]);d2.push([7.4, 0.2]);d2.push([7.5, 0.2]);d2.push([7.6, 6.1]);d2.push([7.7, 22.8]);d2.push([7.8, 11.8]);d2.push([7.8, 0.1]);d2.push([7.8, 0.0]);d2.push([7.8, 0.1]);d2.push([7.8, 0.1]);d2.push([7.8, 0.0]);d2.push([7.8, 0.0]);d2.push([7.9, 0.1]);d2.push([7.9, 0.1]);d2.push([7.9, 0.0]);d2.push([7.9, 0.0]);d2.push([8.0, 0.0]);d2.push([8.0, 0.1]);d2.push([8.0, 0.1]);d2.push([8.0, 0.0]);d2.push([8.0, 0.0]);d2.push([8.0, 2.9]);d2.push([8.1, 0.0]);d2.push([8.1, 0.0]);d2.push([8.1, 0.1]);d2.push([8.1, 5.3]);d2.push([8.2, 26.9]);d2.push([8.2, 26.5]);d2.push([8.2, 18.3]);d2.push([8.2, 32.1]);d2.push([8.2, 23.7]);d2.push([8.2, 37.7]);d2.push([8.3, 44.9]);d2.push([8.3, 44.1]);d2.push([8.4, 45.1]);d2.push([8.4, 68.5]);d2.push([8.4, 70.4]);d2.push([8.4, 72.7]);d2.push([8.5, 67.2]);d2.push([8.5, 13.8]);d2.push([8.6, 0.0]);d2.push([8.6, 0.0]);d2.push([8.6, 0.0]);d2.push([8.6, 0.0]);d2.push([8.7, 0.0]);d2.push([8.7, 0.1]);d2.push([8.8, 0.0]);d2.push([8.8, 0.1]);d2.push([9.0, 0.0]);d2.push([9.2, 0.0]);d2.push([9.4, 0.0]);d2.push([9.4, 0.0]);d2.push([9.5, 0.0]);d2.push([9.5, 0.0]);d2.push([9.5, 0.1]);d2.push([9.5, 0.1]);d2.push([9.6, 0.0]);d2.push([9.7, 0.0]);d2.push([9.7, 0.0]);d2.push([9.8, 0.0]);d2.push([9.8, 0.0]);d2.push([9.8, 0.0]);d2.push([9.9, 0.0]);d2.push([9.9, 0.0]);d2.push([10.0, 0.1]);d2.push([10.0, 0.0]);d2.push([10.0, 0.0]);d2.push([10.1, 0.0]);d2.push([10.1, 0.0]);d2.push([10.1, 0.1]);d2.push([10.1, 0.1]);d2.push([10.2, 0.0]);d2.push([10.2, 0.0]);d2.push([10.3, 0.1]);d2.push([10.3, 0.1]);d2.push([10.3, 0.1]);var options = {  xaxis: { zoomRange: [0, 10.31], panRange: [0, 10.31] },
+    yaxis: { zoomRange: [0.1, 100], panRange: [0, 100] },
+    zoom: { interactive: true }, pan: { interactive: true } , grid: {hoverable: true} };
+$.plot($("#placeholder2"), [ { label: "speed (mph)",  data: d2, lines: { show: true, fill: true } } ], options);  });                        </script>        			  <center>(x-axis = hours)</center>
+<br /><br />
+
+<h3>About the Tracker</h3>
+
+Tracking software by:<br /><br />
+
+<a href=http://topofusion.com><img border=0 src=images/TF-logo3.gif></a>
+<br /><br />
+
+Interested in a SPOT tracker for your race, event or trip?  <a href=about.php>We'd love to hear from you.</a><br /><br />
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-10016193-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
+
+
+
+</body>
+</html>

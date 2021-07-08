@@ -1,0 +1,17 @@
+Features:
+Control truck radio with app to change channels.
+-Audio in/out will be wired directly to radio/headphones
+Use app to turn TX on and off
+Load channels from csv file
+Load chase plan from csv file
+Scrape tracking site for live info
+Extrapolate theoretical info
+
+UI:
+
+SWITCH1  | Chase Plan | Time since last update
+SWITCH2  | Text       | current speed
+SWITCH3  | Box        | current location
+TRANSMIT |            | theoretical location
+---------|____________| theoretical eta / distance to chase
+Chs CUr RM
