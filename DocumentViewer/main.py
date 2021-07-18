@@ -1,21 +1,17 @@
-import cv2
+#
+# This app takes video from a local webcam and then converts it in various ways to make it easier to read with my visual impairment.
+# The intent of this app is to use a webcam mounted on an arm pointed down towards a desk and be able to read documents/mail.
+# I am using a 4k cheap webcam off amazon with a built in light to help normalize lighting issues with documents.
+#
+import viewer
 
-cap = cv2.VideoCapture(0)
+if __name__ == "__main__":
+    # Initialize the class
+    root = viewer.tk.Tk()
+    app = viewer.Viewer(root)
+    app.grid(row=0, column=0)
 
-# Check if the webcam is opened correctly
-if not cap.isOpened():
-    raise IOError("Cannot open webcam")
+    #Escape key quits app
+    app.parent.bind('<Escape>', lambda e: app.parent.quit())
 
-while True:
-    ret, frame = cap.read()
-    frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    frame = cv2.bitwise_not(frame)
-    frame = cv2.resize(frame, None, fx=0.8, fy=0.8, interpolation=cv2.INTER_AREA)
-    cv2.imshow('Webcam Live', frame)
-
-    c = cv2.waitKey(1)
-    if c == 27:
-        break
-
-cap.release()
-cv2.destroyAllWindows()
+    root.mainloop()

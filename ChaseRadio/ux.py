@@ -84,7 +84,6 @@ class MainApplication(tk.Frame):
         self.chaseInput = tk.Entry(master=self.chaseRMFrame, text="Enter location", width=10, bg=BG, fg=FG, font=INFOLBLFONT)
         self.chaseInput.grid(row=0, column=1, sticky="e", padx=40, pady=FRMPADY)
 
-
 #Methods
     def start_tx(self, event):
         self.tx = True
@@ -98,7 +97,7 @@ class MainApplication(tk.Frame):
         print("Updating stats")
         self.request_update()
         try:
-            self.chaseloc = int(self.chaseInput.get())
+            self.chaseloc = int(self.chaseInput.get()) # Used a try block to handle blank or improper input
         except:
             pass
     #Calculate amount of time since last succesful update
@@ -110,14 +109,13 @@ class MainApplication(tk.Frame):
     #Calculate distance to arrival
         self.estdist = round(self.chaseloc - self.theoloc, 1)
     #Calculate ETA
-        if self.curspeed > 0:
+        if self.curspeed > 0: # If the race vehicle is moving, Give me an eta
             eta_time = self.estdist / self.curspeed
             self.eta = str(td(hours=eta_time))
             self.eta = str(self.eta).split(".")[0]
         else:
             self.eta = "Not Moving"
-
-    #Prints the dta to the frame
+    #Prints the data to the frame
         self.lstUpd_v.config(text=str(diff_time).split(".")[0])
         self.curSpeed_v.config(text=f"{self.curspeed}mph")
         self.curRM_v.config(text=f"{self.rmloc}RM")
@@ -126,24 +124,24 @@ class MainApplication(tk.Frame):
         self.estETA_v.config(text=self.eta)
         self.after(1000, self.update_stats)
 
-    def request_update(self):
+    def request_update(self): # Retrieves Page
         print("Requesting data from web")
-        if self.check_internet() == True:
+        if self.check_internet() == True: # Checks to see if there is any response from site
             try:
                 page = requests.get(URL)
-                print(page)
             except:
                 pass
             else:
-                site = page.text
-                html = bs(site, "html.parser")
-                self.lastupdate = dt.now()
-                stats = html.find_all("td")
-                info = {stats[i].getText(): stats[i + 1].getText() for i in range(0, len(stats), 2)}
-                self.curspeed = float(info["Current speed"].split(" ")[0])
-                self.rmloc = float(info["Route mile"].split(" ")[0])
+                site = page.text # Assigns HTML text to "site"
+                html = bs(site, "html.parser") # parses text to html for BS4
+                self.lastupdate = dt.now() # We got data so reset the last time we got data to right now
+                stats = html.find_all("td") # Pulls the table of data out from the page
+                info = {stats[i].getText(): stats[i + 1].getText() for i in range(0, len(stats), 2)} # Creates a dictionary item out of the table
+                self.curspeed = float(info["Current speed"].split(" ")[0]) # Grabs the current speed of race vehicle and strips the mpg off it
+                self.rmloc = float(info["Route mile"].split(" ")[0]) # Grabs the current location and strips the RM off it
+                # We now have a location and speed to do some calculations with
 
-    def check_internet(self):
+    def check_internet(self): # Checks connection to page, allows app to keep running if no connection
         try:
             req = ur.Request(URL)
             response = ur.urlopen(req, timeout=2)

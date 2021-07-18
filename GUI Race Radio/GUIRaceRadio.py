@@ -4,8 +4,6 @@ from csv import DictReader
 import subprocess, signal, os, time, requests, json
 import liveTracking
 
-#Code from linux mag
-
 def liveUpdate(link):
     liveUpdateDict = liveTracking.getTracking(liveUpdateDict)
     print(text)
